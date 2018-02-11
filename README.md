@@ -13,7 +13,7 @@ end
 
 ## Usage
 
-1. Put a data file in [Jekyll data folder](https://jekyllrb.com/docs/datafiles/#the-data-folder).
+1. Put a data file in [Jekyll data folder](https://jekyllrb.com/docs/datafiles/#the-data-folder).<br/>
 Example `list.csv`:
 ```csv
 id,title,description
@@ -27,8 +27,8 @@ data_collections:
     permalink: /list/:id/
     layout: list_item
 ```
-3. Create a layout in `_layouts/`. The page data properties are with `page.data` hash
-Example `list_item`
+3. Create a layout in `_layouts/`. The page data properties are associated with `page.data` hash.<br/>
+Example `_layouts/list_item.html`:
 ```html
 <div>
   <div>{{ page.data.id }}</div>
