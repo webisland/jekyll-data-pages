@@ -1,6 +1,6 @@
 # jekyll-data-pages
 
-This [Jekyll](https://jekyllrb.com) plugin generates
+This [Jekyll](https://jekyllrb.com) plugin generates a page for each row of the specified data files.
 
 ## Instalation
 
@@ -20,7 +20,7 @@ id,title,description
 1,"First item","First item description"
 2,"Second item","Second item description"
 ```
-2. Put the configuration in your `_config.yml`.
+2. Specify data files to generate pages in `_config.yml`.
 ```yaml
 data_collections:
   list:
