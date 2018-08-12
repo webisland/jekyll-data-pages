@@ -36,6 +36,11 @@ module Jekyll
       if site.config.key? 'data_pages'
         site.config['data_pages'].each do |key, config|
           data = site.data[key]
+
+          if data.kind_of?(Hash)
+            data = data.values
+          end
+
           data.each_with_index do |value, key|
             site.pages << DataPage.new(site, site.source, config, value)
           end
