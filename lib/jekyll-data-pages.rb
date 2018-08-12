@@ -33,8 +33,8 @@ module Jekyll
     safe true
 
     def generate(site)
-      if site.config.key? 'data_collections'
-        site.config['data_collections'].each do |key, config|
+      if site.config.key? 'data_pages'
+        site.config['data_pages'].each do |key, config|
           data = site.data[key]
           data.each_with_index do |value, key|
             site.pages << DataPage.new(site, site.source, config, value)

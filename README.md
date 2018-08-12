@@ -22,7 +22,7 @@ id,title,description
 ```
 Specify data files to generate pages in `_config.yml`.
 ```yaml
-data_collections:
+data_pages:
   list:
     permalink: /list/:id/
     layout: list_item
