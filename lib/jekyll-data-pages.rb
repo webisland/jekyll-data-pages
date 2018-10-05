@@ -15,11 +15,13 @@ module Jekyll
     end
 
     def url_placeholders
+      data = self.data['data'].clone
+      data.each { |key, value| data[key] = value.to_s }
       {
         :path => @dir,
         :basename => basename,
         :output_ext => output_ext
-      }.merge(self.data['data'])
+      }.merge(data)
     end
 
     private
@@ -43,6 +45,7 @@ module Jekyll
 
           data.each_with_index do |value, key|
             site.pages << DataPage.new(site, site.source, config, value)
+            break
           end
         end
       end

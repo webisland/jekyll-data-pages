@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'jekyll-data-pages'
-  s.version = '1.0.2'
+  s.version = '1.0.3'
   s.date = '2018-02-11'
   s.summary = "Generate pages for specific data collections."
   s.description = "Data pages generator."

@@ -1,4 +1,4 @@
-# jekyll-data-pages
+# jekyll-data-pages v1.0.3
 
 This [Jekyll](https://jekyllrb.com) plugin generates a page for each row of the specified data files.
 
