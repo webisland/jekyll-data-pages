@@ -36,15 +36,28 @@ module Jekyll
 
     def generate(site)
       if site.config.key? 'data_pages'
-        site.config['data_pages'].each do |key, config|
-          data = site.data[key]
+        site.config['data_pages'].each do |config|
+          data = site.data[config['dataset']]
 
           if data.kind_of?(Hash)
             data = data.values
           end
 
-          data.each_with_index do |value, key|
-            site.pages << DataPage.new(site, site.source, config, value)
+          data.each_with_index do |obj|
+            excluded = false
+
+            config['exclude'].each do |exc_hash|
+              exc_key = exc_hash[0]
+              exc_values = exc_hash[1]
+
+              if exc_values.include? obj[exc_key]
+                excluded = true
+              end
+            end
+
+            unless excluded
+              site.pages << DataPage.new(site, site.source, config, obj)
+            end
           end
         end
       end
